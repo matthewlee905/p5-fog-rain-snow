@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<title>霧、雨和雪是怎樣形成的？</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<noscript><div class="noscript">請用 Safari 打開這個檔案。本課件需要瀏覽器執行，才能逐步觀看動畫。</div></noscript>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <h1>霧、雨和雪是怎樣形成的？</h1>
+    </div>
+  </header>
+
+  <div class="learn-goal" role="note">
+    <div class="lab">🎯 學習目標</div>
+    <p>我能夠根據水蒸氣出現的位置和空氣溫度，判斷會形成霧、雨還是雪。</p>
+  </div>
+  <div class="mission">
+    <div class="lab">任務目的</div>
+    <p>① 逐步觀看海水蒸發後，接近地面和在高空時分別會發生什麼。<br>② 選擇空氣溫度，看看會形成降雨還是降雪。<br>③ 完成後可以做一個短練習，看看自己是否明白。</p>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="課件分頁">
+    <button type="button" class="tab" id="tabObserve" role="tab" aria-selected="true" aria-controls="panelObserve">觀察過程</button>
+    <button type="button" class="tab" id="tabQuiz" role="tab" aria-selected="false" aria-controls="panelQuiz">短練習</button>
+  </div>
+
+  <section id="panelObserve" role="tabpanel" aria-labelledby="tabObserve">
+    <div class="progress" aria-live="polite">
+      <p class="plab" id="progressLabel">進度：已完成 0／5 項觀察</p>
+      <div class="chips" id="progressChips"></div>
+    </div>
+
+    <div class="panel" id="observeMain">
+      <div class="scene-wrap" id="sceneWrap">
+        <svg id="scene" viewBox="0 0 900 520" role="img" aria-labelledby="sceneTitle" preserveAspectRatio="xMidYMid meet">
+          <title id="sceneTitle">風景動畫：海、太陽、陸地、山和天空</title>
+          <defs>
+            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#7ec8ee"/>
+              <stop offset="55%" stop-color="#c5eaf8"/>
+              <stop offset="100%" stop-color="#e7f6c8"/>
+            </linearGradient>
+            <radialGradient id="sunGrad" cx="42%" cy="38%" r="60%">
+              <stop offset="0%" stop-color="#fff6b0"/>
+              <stop offset="55%" stop-color="#ffd93d"/>
+              <stop offset="100%" stop-color="#ffb703"/>
+            </radialGradient>
+            <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#6ec8ff"/>
+              <stop offset="50%" stop-color="#2b9adf"/>
+              <stop offset="100%" stop-color="#1a6faf"/>
+            </linearGradient>
+            <linearGradient id="mtFar" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#c5d8f0"/>
+              <stop offset="40%" stop-color="#8aaad4"/>
+              <stop offset="100%" stop-color="#5e86b8"/>
+            </linearGradient>
+            <linearGradient id="mtMid" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#9fb8e0"/>
+              <stop offset="45%" stop-color="#5b86c7"/>
+              <stop offset="100%" stop-color="#3d6aa8"/>
+            </linearGradient>
+            <linearGradient id="mtNear" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8fbf6a"/>
+              <stop offset="100%" stop-color="#4f8f3e"/>
+            </linearGradient>
+            <linearGradient id="hillGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8ed36f"/>
+              <stop offset="100%" stop-color="#4fa34a"/>
+            </linearGradient>
+            <linearGradient id="coolGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="rgba(180,220,255,0)"/>
+              <stop offset="45%" stop-color="rgba(150,200,240,.35)"/>
+              <stop offset="100%" stop-color="rgba(120,180,230,.55)"/>
+            </linearGradient>
+            <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="1.4"/>
+            </filter>
+            <clipPath id="clipUpper"><rect x="0" y="0" width="900" height="305"/></clipPath>
+            <clipPath id="clipLower"><rect x="0" y="305" width="900" height="215"/></clipPath>
+          </defs>
+
+          <rect class="sky" x="0" y="0" width="900" height="520" fill="url(#skyGrad)"/>
+
+          <!-- 太陽 -->
+          <g class="sun" aria-hidden="true">
+            <g class="rays">
+              <g fill="#ffcf4a" opacity=".9">
+                <rect x="127" y="28" width="6" height="28" rx="3"/>
+                <rect x="127" y="180" width="6" height="28" rx="3"/>
+                <rect x="42" y="115" width="28" height="6" rx="3"/>
+                <rect x="190" y="115" width="28" height="6" rx="3"/>
+              </g>
+              <g fill="#ffcf4a" opacity=".75" transform="rotate(45 130 118)">
+                <rect x="127" y="30" width="6" height="24" rx="3"/>
+                <rect x="127" y="182" width="6" height="24" rx="3"/>
+                <rect x="46" y="115" width="24" height="6" rx="3"/>
+                <rect x="190" y="115" width="24" height="6" rx="3"/>
+              </g>
+            </g>
+            <circle class="sun-glow" cx="130" cy="118" r="62" fill="#ffe38a" opacity=".55"/>
+            <circle class="sun-core" cx="130" cy="118" r="48" fill="url(#sunGrad)"/>
+            <circle cx="118" cy="108" r="10" fill="#fff8d0" opacity=".55"/>
+          </g>
+
+          <!-- 遠山 -->
+          <path d="M430,390 L530,210 L590,300 L670,165 L760,260 L830,140 L900,250 L900,440 L500,440 Z" fill="url(#mtFar)"/>
+          <path d="M665,180 L670,165 L700,200 L682,188 Z" fill="#f4f8ff" opacity=".85"/>
+          <path d="M822,160 L830,140 L852,172 L834,164 Z" fill="#f4f8ff" opacity=".8"/>
+
+          <!-- 中山 -->
+          <path d="M470,430 L610,205 L690,305 L740,230 L860,430 Z" fill="url(#mtMid)"/>
+          <path d="M598,230 L610,205 L638,250 L616,238 Z" fill="#eef4ff" opacity=".9"/>
+          <path d="M726,255 L740,230 L762,268 L742,258 Z" fill="#eef4ff" opacity=".75"/>
+          <!-- 小溪 -->
+          <path d="M628,310 C632,340 618,365 626,390 C634,416 620,435 628,455" fill="none" stroke="#7ec8ee" stroke-width="6" stroke-linecap="round" opacity=".85"/>
+          <path d="M628,310 C632,340 618,365 626,390 C634,416 620,435 628,455" fill="none" stroke="#d7f3ff" stroke-width="2.2" stroke-linecap="round"/>
+
+          <!-- 近丘與草地 -->
+          <path d="M200,455 C280,400 350,418 430,390 C510,362 575,400 670,408 C760,416 830,438 900,448 L900,520 L180,520 Z" fill="url(#hillGrad)"/>
+          <path d="M0,468 C80,450 140,462 210,452 C260,445 300,458 350,450 L200,520 L0,520 Z" fill="#6fbe5d"/>
+
+          <!-- 樹 -->
+          <g class="trees" aria-hidden="true">
+            <g transform="translate(268,410)">
+              <rect x="-5" y="28" width="10" height="26" rx="2" fill="#8b5a2b"/>
+              <circle cx="0" cy="16" r="22" fill="#2f9a4a"/>
+              <circle cx="-14" cy="24" r="14" fill="#3fad58"/>
+              <circle cx="14" cy="26" r="13" fill="#268a42"/>
+            </g>
+            <g transform="translate(318,422)">
+              <rect x="-4" y="20" width="8" height="22" rx="2" fill="#7a4a24"/>
+              <circle cx="0" cy="12" r="18" fill="#37a552"/>
+              <circle cx="-11" cy="20" r="12" fill="#2d8c46"/>
+              <circle cx="12" cy="20" r="11" fill="#4fbe66"/>
+            </g>
+            <g transform="translate(372,400)">
+              <rect x="-5" y="30" width="10" height="28" rx="2" fill="#8b5a2b"/>
+              <circle cx="0" cy="18" r="24" fill="#248a40"/>
+              <circle cx="-16" cy="28" r="15" fill="#3aaa54"/>
+              <circle cx="16" cy="30" r="14" fill="#2f9a4a"/>
+            </g>
+            <g transform="translate(430,428)">
+              <rect x="-4" y="16" width="8" height="20" rx="2" fill="#7a4a24"/>
+              <circle cx="0" cy="10" r="16" fill="#3fad58"/>
+              <circle cx="-10" cy="16" r="10" fill="#2d8c46"/>
+              <circle cx="11" cy="17" r="10" fill="#268a42"/>
+            </g>
+            <g transform="translate(498,418)">
+              <rect x="-5" y="22" width="9" height="24" rx="2" fill="#8b5a2b"/>
+              <circle cx="0" cy="14" r="20" fill="#2f9a4a"/>
+              <circle cx="-13" cy="22" r="13" fill="#3fad58"/>
+              <circle cx="13" cy="24" r="12" fill="#248a40"/>
+            </g>
+          </g>
+
+          <!-- 海 -->
+          <path d="M0,432 C70,416 130,444 210,428 C290,412 350,438 430,430 C490,424 530,448 580,452 L360,520 L0,520 Z" fill="url(#seaGrad)"/>
+          <path class="wave" d="M-20,448 C30,436 70,460 120,448 C170,436 210,460 260,448 C310,436 350,458 400,448" fill="none" stroke="#c8eeff" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+          <path class="wave" d="M-10,468 C40,456 90,480 140,468 C190,456 240,480 290,468" fill="none" stroke="#e6f7ff" stroke-width="2.2" stroke-linecap="round" opacity=".55" style="animation-delay:-1.4s"/>
+          <path d="M0,500 C80,492 140,508 220,498 L80,520 L0,520 Z" fill="#7fd0ff" opacity=".25"/>
+
+          <!-- 近地面降溫紗 -->
+          <ellipse class="cool-veil" cx="250" cy="430" rx="210" ry="90" fill="url(#coolGrad)"/>
+
+          <!-- 水蒸氣 -->
+          <g class="steam-layer" id="steamLayer" aria-hidden="true"></g>
+
+          <!-- 霧 -->
+          <g class="fog-layer" aria-hidden="true">
+            <g class="fog-puff" fill="#eef3f6">
+              <ellipse cx="200" cy="408" rx="70" ry="22" opacity=".85"/>
+              <ellipse cx="250" cy="398" rx="80" ry="26" opacity=".8"/>
+              <ellipse cx="310" cy="412" rx="74" ry="22" opacity=".78"/>
+              <ellipse cx="230" cy="424" rx="90" ry="18" opacity=".7"/>
+              <ellipse cx="170" cy="420" rx="50" ry="16" opacity=".65"/>
+            </g>
+            <g class="fog-puff" fill="#f7fafc" style="animation-delay:-2.2s">
+              <ellipse cx="280" cy="390" rx="54" ry="16" opacity=".75"/>
+              <ellipse cx="150" cy="400" rx="40" ry="14" opacity=".55"/>
+            </g>
+          </g>
+
+          <!-- 雲 -->
+          <g class="cloud-main" aria-hidden="true">
+            <g fill="#f4f8fd" stroke="#c5d3e4" stroke-width="2">
+              <ellipse cx="540" cy="128" rx="60" ry="36"/>
+              <ellipse cx="590" cy="108" rx="66" ry="44"/>
+              <ellipse cx="650" cy="122" rx="70" ry="40"/>
+              <ellipse cx="600" cy="144" rx="92" ry="32"/>
+              <ellipse cx="505" cy="140" rx="42" ry="22"/>
+              <ellipse cx="700" cy="140" rx="38" ry="20"/>
+            </g>
+            <g fill="#d5deea" opacity=".55">
+              <ellipse cx="620" cy="160" rx="50" ry="14"/>
+              <ellipse cx="570" cy="150" rx="28" ry="10"/>
+            </g>
+            <g id="cloudDrops"></g>
+          </g>
+
+          <!-- 冰晶 -->
+          <g id="crystalLayer" aria-hidden="true"></g>
+
+          <!-- 降雨／降雪 -->
+          <g class="rain-layer rain-a" id="rainA" aria-hidden="true"></g>
+          <g class="rain-layer rain-b" id="rainB" aria-hidden="true"></g>
+          <g class="snow-layer snow-full" id="snowFull" aria-hidden="true"></g>
+          <g class="mix-snow" id="mixSnow" clip-path="url(#clipUpper)" aria-hidden="true"></g>
+          <g class="mix-rain" id="mixRain" clip-path="url(#clipLower)" aria-hidden="true"></g>
+
+          <!-- 標籤 -->
+          <g class="badge-svg badge-fog" transform="translate(250,395)">
+            <ellipse cx="0" cy="0" rx="36" ry="22" fill="#f17eb8"/>
+            <text x="0" y="7" text-anchor="middle" font-size="26" font-weight="800" fill="#fff" font-family="PingFang TC, Noto Sans TC, sans-serif">霧</text>
+          </g>
+          <g class="badge-svg badge-rain-a" transform="translate(500,300)">
+            <ellipse cx="0" cy="0" rx="46" ry="24" fill="#6d4bb3"/>
+            <text x="0" y="8" text-anchor="middle" font-size="24" font-weight="800" fill="#fff" font-family="PingFang TC, Noto Sans TC, sans-serif">降雨</text>
+          </g>
+          <g class="badge-svg badge-rain-b" transform="translate(620,320)">
+            <ellipse cx="0" cy="0" rx="46" ry="24" fill="#6d4bb3"/>
+            <text x="0" y="8" text-anchor="middle" font-size="24" font-weight="800" fill="#fff" font-family="PingFang TC, Noto Sans TC, sans-serif">降雨</text>
+          </g>
+          <g class="badge-svg badge-snow" transform="translate(790,285)">
+            <ellipse cx="0" cy="0" rx="46" ry="24" fill="#6d4bb3"/>
+            <text x="0" y="8" text-anchor="middle" font-size="24" font-weight="800" fill="#fff" font-family="PingFang TC, Noto Sans TC, sans-serif">降雪</text>
+          </g>
+          <g class="badge-svg badge-rain-c" transform="translate(800,430)">
+            <ellipse cx="0" cy="0" rx="46" ry="24" fill="#6d4bb3"/>
+            <text x="0" y="8" text-anchor="middle" font-size="24" font-weight="800" fill="#fff" font-family="PingFang TC, Noto Sans TC, sans-serif">降雨</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="caption" id="captionBox">
+        <div class="where hidden" id="captionWhere"></div>
+        <p id="captionText" role="status" aria-live="polite"></p>
+      </div>
+      <div class="choices hidden" id="choiceBox"></div>
+    </div>
+
+    <div id="overviewPanel" class="panel overview hidden">
+      <h2>全部過程</h2>
+      <div class="flow" id="overviewFlow"></div>
+      <div class="btn-row">
+        <button type="button" class="btn btn-ghost" id="btnCloseOverview">關閉全部過程</button>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="side-actions">
+        <button type="button" class="btn btn-purple" id="btnOverview" disabled>全部過程（尚未探索完）</button>
+        <button type="button" class="btn btn-teal" id="btnGoQuiz">去做短練習</button>
+      </div>
+      <div class="btn-row">
+        <button type="button" class="btn btn-ghost" id="btnPrev" disabled>上一步</button>
+        <button type="button" class="btn btn-primary" id="btnNext">下一步</button>
+        <button type="button" class="btn btn-yellow" id="btnRestart">重新開始</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="panelQuiz" role="tabpanel" aria-labelledby="tabQuiz" hidden>
+    <div class="levels" role="group" aria-label="練習層次">
+      <button type="button" class="lv on" data-l="support" id="lvSupport">🌱 支援</button>
+      <button type="button" class="lv" data-l="basic" id="lvBasic">⭐ 基本</button>
+      <button type="button" class="lv" data-l="challenge" id="lvChallenge">🔥 挑戰</button>
+    </div>
+    <p id="levelNote" style="margin:0 0 10px;font-size:17px;font-weight:650;color:#334155"></p>
+    <div class="qbox" id="quizBox"></div>
+    <div class="btn-row" style="margin-top:10px">
+      <button type="button" class="btn btn-ghost" id="btnBackObserve">返回觀察過程</button>
+    </div>
+  </section>
+
+  <div class="teacher-entry">
+    <details id="teacherBox">
+      <summary class="tbtn">老師說明</summary>
+      <div class="teacher">
+        <h3>操作方法</h3>
+        <ul>
+          <li>用 iPad Safari 開啟本資料夾的 <code>index.html</code>（可用檔案或在學校網絡以 http 開啟）。無需登入、無需網絡套件。</li>
+          <li>學生按「下一步」逐步觀看動畫；當畫面出現選擇按鈕時，先點選路徑或溫度，才會繼續。</li>
+          <li>請先分開探索「近地面」與「高空」。高空成雲後，再分別觀察「小水滴積聚變重」和「小水滴上升成冰晶」兩條路徑。冰晶路徑還可以選擇不同溫度。</li>
+          <li>兩條主要路徑（近地面成霧，以及高空的兩條成雲後路徑）都探索完後，「全部過程」會解鎖，那時才顯示完整路徑總覽。</li>
+          <li>「短練習」可隨時進入，也可探索後再做。分支援、基本、挑戰三層，答完即時回饋，可重試。</li>
+          <li>「重新開始」只重設觀察過程，不會收集或儲存學生個人資料。</li>
+        </ul>
+        <h3>覆蓋的課本步驟（第 72–73 頁）</h3>
+        <ol>
+          <li>海水受熱，蒸發成水蒸氣。</li>
+          <li>近地面：當有明顯的降溫，接近地面的水蒸氣遇冷凝結 → 標籤「霧」。（此說明句按課本題框，沒有加上「形成霧」四字。）</li>
+          <li>在高空時，水蒸氣遇冷凝結成小水滴，小水滴聚集成雲。</li>
+          <li>雲中的小水滴積聚，變得愈來愈重 → 降雨。</li>
+          <li>雲中的小水滴上升，遇冷凝結成冰晶。</li>
+          <li>冰晶聚集，因重力而下降。</li>
+          <li>冰晶下降時，當空氣中的溫度高於 0℃ → 降雨。</li>
+          <li>冰晶下降時，當空氣中的溫度是 0℃ 或低於 0℃ → 降雪。</li>
+          <li>接近地面時，如果溫度高於 0℃，由降雪變成降雨。</li>
+        </ol>
+        <p>課本沒有寫「接近地面溫度是 0℃ 或低於 0℃ 時雪仍是雪」的說明句。若學生選擇這個溫度，課件只用動畫讓雪到達地面，不加新說明。</p>
+        <h3>三層差異</h3>
+        <ul>
+          <li><strong>支援：</strong>題目較少，全部是判斷對錯，答錯可看簡短提示（提示只用課本文句）。</li>
+          <li><strong>基本：</strong>混合判斷對錯，以及根據「高於 0℃／0℃ 或低於 0℃」判斷降雨還是降雪，也包括近地面溫度高於 0℃ 時由降雪變成降雨。</li>
+          <li><strong>挑戰：</strong>加入步驟排序，並請學生分辨兩條降雨路徑（小水滴積聚變重，或冰晶下降且空氣溫度高於 0℃）。</li>
+        </ul>
+        <h3>已知限制</h3>
+        <ul>
+          <li>動畫是示意風景，不是真實天氣觀測或衛星圖。</li>
+          <li>科學內容只按本頁課文與示意圖呈現，沒有加入凝結核、冷暖前線，也沒有做霜、雹等本頁沒有的內容。</li>
+          <li>開發時以 headless Chrome 在 http 及 file:// 自測，尚未在真 iPad 上試用。若 iPad Safari 見到舊畫面，重新整理即可。</li>
+          <li>本課件不上載公開網站，除非另行授權。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+  <footer class="site">校本小五科學課件　可離線開啟　無登入</footer>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+/* 霧、雨和雪是怎樣形成的？ 校本小五科學課件（離線、系統字體、iPad Safari） */
+:root{
+  --ink:#1f2937;
+  --muted:#4b5563;
+  --bg:#e8f4ff;
+  --card:#ffffff;
+  --line:#cfe3f5;
+  --accent:#ff7a45;
+  --blue:#3b82f6;
+  --green:#059669;
+  --purple:#6d28d9;
+  --pink:#db2777;
+  --yellow:#f59e0b;
+  --soft:#fff1d6;
+  --ok:#ecfdf5;
+  --ok-ink:#047857;
+  --warn:#fff1f2;
+  --warn-ink:#be123c;
+  --hint:#fffbeb;
+  --shadow:0 4px 0 #c5d9ec;
+  --radius:20px;
+  --font:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","PingFang HK","Heiti TC","Microsoft JhengHei",sans-serif;
+  --safe-top:env(safe-area-inset-top,0px);
+  --safe-bottom:env(safe-area-inset-bottom,0px);
+  --safe-left:env(safe-area-inset-left,0px);
+  --safe-right:env(safe-area-inset-right,0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%;background:linear-gradient(#c5e8fa 0%,#e8f4ff 280px,#fff6e9 100%) fixed;color:var(--ink);font-family:var(--font);-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{touch-action:manipulation;padding-left:var(--safe-left);padding-right:var(--safe-right)}
+button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+button{cursor:pointer;touch-action:manipulation;border:none}
+img,svg{max-width:100%;display:block}
+a{color:var(--blue)}
+.hidden{display:none!important}
+.noscript{margin:12px;padding:16px 18px;background:#fff1f2;border:3px solid #fb7185;border-radius:16px;font-size:20px;line-height:1.55}
+
+.app{max-width:980px;margin:0 auto;padding:10px 14px calc(18px + var(--safe-bottom))}
+
+.topbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.brand{flex:1;min-width:200px}
+.brand h1{margin:0;font-size:26px;letter-spacing:.4px;line-height:1.3}
+
+.learn-goal{background:#eef2ff;border:3px solid #a5b4fc;border-radius:18px;padding:10px 14px;margin:8px 0 6px;cursor:default;-webkit-user-select:none;user-select:none}
+.learn-goal .lab{font-size:14px;font-weight:800;letter-spacing:1px;color:#4338ca;margin:0 0 4px}
+.learn-goal p{margin:0;font-size:19px;line-height:1.5;font-weight:650;color:#1e1b4b}
+
+.mission{background:#fff;border:3px solid #fb923c;border-radius:18px;padding:10px 14px;margin:8px 0 12px;box-shadow:var(--shadow)}
+.mission .lab{font-size:14px;font-weight:800;letter-spacing:1px;color:#c2410c;margin:0 0 4px}
+.mission p{margin:0;font-size:19px;line-height:1.55;font-weight:650}
+
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.tab{min-height:48px;padding:8px 16px;border-radius:14px;font-size:18px;font-weight:800;background:#fff;border:3px solid #dbe7f3;box-shadow:0 3px 0 #c5d9ec;color:var(--ink)}
+.tab[aria-selected="true"]{background:#fb923c;border-color:#c2410c;color:#1f2937;box-shadow:0 3px 0 #c2410c}
+
+.progress{background:#fff;border-radius:16px;padding:10px 12px;margin:0 0 10px;box-shadow:var(--shadow)}
+.progress .plab{font-size:15px;font-weight:800;color:#334155;margin:0 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:4px;min-height:36px;padding:4px 10px;border-radius:999px;background:#f1f5f9;font-size:15px;font-weight:700;color:#64748b}
+.chip.done{background:#d1fae5;color:#047857}
+.chip.now{background:#ffedd5;color:#c2410c;box-shadow:0 0 0 2px #fb923c}
+
+.panel{background:var(--card);border-radius:var(--radius);padding:12px;box-shadow:var(--shadow);margin-bottom:12px}
+.scene-wrap{position:relative;overflow:hidden;border-radius:18px;background:#9ad4f0;border:3px solid #7ec0e4;line-height:0}
+.scene-wrap svg{width:100%;height:auto;display:block;aspect-ratio:900/520;max-height:52vh}
+
+.caption{margin-top:10px;background:#fff3c4;border:3px solid #e8c547;border-radius:16px;padding:12px 14px;min-height:64px}
+.caption p{margin:0;font-size:20px;line-height:1.55;font-weight:700}
+.caption .where{display:inline-block;font-size:14px;font-weight:800;letter-spacing:1px;background:#fff;border-radius:999px;padding:2px 10px;margin:0 0 6px;color:#0369a1}
+
+.choices{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.choices .btn{flex:1 1 200px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:52px;padding:10px 16px;border-radius:16px;font-size:20px;font-weight:800;background:#e5e7eb;color:var(--ink);box-shadow:0 3px 0 #cfd4da;text-align:center;line-height:1.3}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 #cfd4da}
+.btn:disabled{opacity:.45;transform:none;cursor:not-allowed}
+.btn-primary{background:#fb923c;color:#1f2937;box-shadow:0 3px 0 #c2410c}
+.btn-blue{background:#93c5fd;box-shadow:0 3px 0 #1d4ed8}
+.btn-green{background:#86efac;box-shadow:0 3px 0 #047857}
+.btn-purple{background:#d8b4fe;box-shadow:0 3px 0 #6d28d9}
+.btn-pink{background:#f9a8d4;box-shadow:0 3px 0 #be185d}
+.btn-yellow{background:#fde047;box-shadow:0 3px 0 #ca8a04}
+.btn-teal{background:#5eead4;box-shadow:0 3px 0 #0f766e}
+.btn-ghost{background:#fff;border:2px solid var(--line);box-shadow:var(--shadow)}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.btn-row .btn{flex:1 1 120px}
+
+.controls{position:sticky;bottom:0;z-index:8;background:rgba(232,244,255,.97);border-top:1px solid #cfe3f5;padding:8px 14px calc(8px + var(--safe-bottom));margin:0 -14px}
+.controls .side-actions{margin:0 0 8px}
+
+.side-actions{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 8px}
+.side-actions .btn{flex:1 1 140px;min-height:48px;font-size:18px}
+
+/* 全部過程 */
+.overview{background:#fffdf7;border:3px solid #f6d27a;border-radius:18px;padding:14px 14px 8px}
+.overview h2{margin:0 0 10px;font-size:22px}
+.flow{display:flex;flex-direction:column;gap:10px}
+.flow-block{border-radius:16px;padding:10px 12px;background:#fff}
+.flow-block.evap{background:#fff7ed;border:2px solid #fdba74}
+.flow-block.near{background:#fdf2f8;border:2px solid #f9a8d4}
+.flow-block.high{background:#eff6ff;border:2px solid #93c5fd}
+.flow-k{font-size:14px;font-weight:800;letter-spacing:1px;margin:0 0 6px;color:#9a3412}
+.flow-block.near .flow-k{color:#9d174d}
+.flow-block.high .flow-k{color:#1d4ed8}
+.flow p{margin:0 0 6px;font-size:18px;line-height:1.5;font-weight:650}
+.flow .branch{margin:8px 0;padding:8px 10px;border-radius:12px;background:rgba(255,255,255,.8);border:2px dashed #bfdbfe}
+.badge{display:inline-flex;align-items:center;justify-content:center;min-width:52px;min-height:32px;padding:2px 10px;border-radius:999px;font-weight:800;font-size:16px;margin-left:4px;vertical-align:middle}
+.badge-fog{background:#f9a8d4;color:#831843}
+.badge-rain,.badge-snow{background:#7c5cbf;color:#fff}
+
+/* 短練習 */
+.levels{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.lv{min-height:48px;padding:8px 16px;border-radius:14px;font-size:18px;font-weight:800;background:#e5e7eb}
+.lv.on[data-l=support]{background:#bbf7d0}
+.lv.on[data-l=basic]{background:#bfdbfe}
+.lv.on[data-l=challenge]{background:#fecaca}
+.qbox{background:#fff;border-radius:18px;padding:14px;box-shadow:var(--shadow)}
+.qmeta{font-size:15px;font-weight:800;color:#64748b;margin:0 0 8px}
+.qtext{font-size:22px;font-weight:750;line-height:1.5;margin:0 0 12px}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{min-height:52px;text-align:left;justify-content:flex-start;padding-left:16px;background:#fff;border:3px solid #dbe7f3;box-shadow:0 3px 0 #c5d9ec;border-radius:16px;font-size:19px;font-weight:700;width:100%}
+.opt.on{border-color:#fb923c;background:#fff7ed}
+.opt.ok{border-color:#047857;background:#ecfdf5}
+.opt.bad{border-color:#be123c;background:#fff1f2}
+.order-picked{min-height:48px;margin:0 0 10px;padding:8px;border:2px dashed #fdba74;border-radius:14px;background:#fffbeb}
+.order-picked .slot{display:flex;align-items:center;gap:8px;min-height:44px;padding:6px 10px;margin:4px 0;background:#fff;border-radius:12px;font-weight:700;font-size:17px}
+.order-picked .n{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#fb923c;color:#1f2937;font-weight:800;flex-shrink:0}
+.feedback{margin-top:10px;padding:12px 14px;border-radius:14px;font-size:18px;line-height:1.55;font-weight:650;min-height:24px}
+.feedback.ok{background:var(--ok);color:var(--ok-ink)}
+.feedback.warn{background:var(--warn);color:var(--warn-ink)}
+.feedback.hint{background:var(--hint);color:#92400e}
+.quiz-end{text-align:center;padding:8px 0}
+.quiz-end p{font-size:22px;font-weight:800}
+
+.teacher-entry{margin-top:14px;text-align:right}
+.tbtn{background:none;border:none;color:#94a3b8;font-size:14px;padding:10px 8px;min-height:44px;box-shadow:none}
+.teacher{font-size:17px;line-height:1.65;background:#fff;border-radius:16px;padding:12px 14px;margin-top:8px;box-shadow:var(--shadow)}
+.teacher h3{font-size:20px;margin:14px 0 6px}
+.teacher ul,.teacher ol{margin:6px 0 8px;padding-left:1.4em}
+.teacher li{margin:4px 0}
+footer.site{margin-top:12px;color:var(--muted);font-size:13px;text-align:center}
+
+/* ===== 風景動畫 ===== */
+.sky{pointer-events:none}
+.sun-core{transform-origin:130px 118px;transform-box:fill-box}
+#scene[data-step="evaporate"] .sun-glow{animation:sunPulse 1.6s ease-in-out infinite}
+#scene[data-step="evaporate"] .rays{animation:raySpin 16s linear infinite;transform-origin:130px 118px}
+.rays{transform-origin:130px 118px}
+
+.steam,.wisp{opacity:0;visibility:hidden}
+#scene.has-steam .steam-layer, #scene.has-steam .wisp{visibility:visible}
+#scene[data-step="evaporate"] .wisp,
+#scene[data-step="path_pick"] .wisp-lingering,
+#scene[data-step="ng_cool"] .wisp-near,
+#scene[data-step="ng_fog"] .wisp-near,
+#scene[data-step="hs_cloud"] .wisp-high{visibility:visible;opacity:1}
+
+.wisp{animation:none}
+#scene[data-step="evaporate"] .wisp{animation:riseSteam 3s ease-in infinite}
+#scene[data-step="path_pick"] .wisp-lingering{animation:riseSteam 3.6s ease-in infinite;opacity:.7}
+#scene[data-step="ng_cool"] .wisp-near,
+#scene[data-step="ng_fog"] .wisp-near{animation:driftNear 3.2s ease-in-out infinite}
+#scene[data-step="hs_cloud"] .wisp-high{animation:riseHigh 2.8s ease-in infinite}
+
+.cool-veil{opacity:0;transition:opacity .8s}
+#scene[data-step="ng_cool"] .cool-veil,
+#scene[data-step="ng_fog"] .cool-veil{opacity:.45}
+
+.fog-layer{opacity:0;visibility:hidden;transition:opacity .9s}
+#scene.has-fog .fog-layer,
+#scene[data-step="ng_fog"] .fog-layer{visibility:visible;opacity:1}
+#scene.has-fog:not([data-step="ng_fog"]):not([data-step="ng_cool"]) .fog-layer{opacity:.72}
+.fog-puff{animation:fogDrift 5s ease-in-out infinite}
+
+.cloud-main{opacity:0;visibility:hidden;transform:scale(.72);transform-origin:590px 132px;transition:opacity .8s,transform .8s}
+#scene.has-cloud .cloud-main,
+#scene[data-step="hs_cloud"] .cloud-main,
+#scene[data-step="cloud_pick"] .cloud-main,
+#scene[data-step="drop_rain"] .cloud-main,
+#scene[data-step="ice_up"] .cloud-main,
+#scene[data-step="ice_fall"] .cloud-main,
+#scene[data-step="air_temp_pick"] .cloud-main,
+#scene[data-step="ice_rain"] .cloud-main,
+#scene[data-step="ice_snow"] .cloud-main,
+#scene[data-step="ground_temp_pick"] .cloud-main,
+#scene[data-step="snow_to_rain"] .cloud-main,
+#scene[data-step="snow_stay"] .cloud-main{visibility:visible;opacity:1;transform:scale(1)}
+
+.cloud-drop{opacity:0;visibility:hidden;transition:transform 1s ease,opacity .8s;transform-origin:center;transform-box:fill-box}
+#scene[data-step="hs_cloud"] .cloud-drop,
+#scene[data-step="cloud_pick"] .cloud-drop,
+#scene[data-step="drop_rain"] .cloud-drop{visibility:visible;opacity:.95}
+#scene[data-step="drop_rain"] .cloud-drop{transform:scale(1.85)}
+#scene[data-step="ice_up"] .cloud-drop{visibility:visible;opacity:0;transform:translateY(-70px)}
+#scene[data-step="ice_up"] .cloud-drop:nth-child(2n){transform:translate(12px,-80px)}
+#scene[data-step="ice_up"] .cloud-drop:nth-child(3n){transform:translate(-14px,-64px)}
+
+.crystal{opacity:0;visibility:hidden;transition:opacity .7s,transform .7s;transform-origin:center;transform-box:fill-box}
+#scene[data-step="ice_up"] .crystal,
+#scene[data-step="ice_fall"] .crystal,
+#scene[data-step="air_temp_pick"] .crystal{visibility:visible;opacity:1}
+#scene[data-step="ice_up"] .crystal{animation:sparkle 1.4s ease-in-out infinite}
+#scene[data-step="ice_fall"] .crystal,
+#scene[data-step="air_temp_pick"] .crystal-fall{animation:crystalFall 2.4s ease-in infinite}
+
+.rain-layer,.snow-layer,.mix-snow,.mix-rain{opacity:0;visibility:hidden}
+#scene[data-step="drop_rain"] .rain-a,
+#scene[data-step="ice_rain"] .rain-b{visibility:visible;opacity:1}
+#scene[data-step="ice_snow"] .snow-full,
+#scene[data-step="ground_temp_pick"] .snow-full,
+#scene[data-step="snow_stay"] .snow-full{visibility:visible;opacity:1}
+#scene[data-step="snow_to_rain"] .mix-snow,
+#scene[data-step="snow_to_rain"] .mix-rain{visibility:visible;opacity:1}
+
+.drop{animation:fallDrop 1.5s linear infinite}
+.flake{animation:fallFlake 2.3s linear infinite}
+
+.badge-svg{opacity:0;visibility:hidden;transition:opacity .5s}
+#scene[data-step="ng_fog"] .badge-fog,
+#scene.has-fog .badge-fog{visibility:visible;opacity:1}
+#scene[data-step="drop_rain"] .badge-rain-a,
+#scene[data-step="ice_rain"] .badge-rain-b,
+#scene[data-step="snow_to_rain"] .badge-rain-c{visibility:visible;opacity:1}
+#scene[data-step="ice_snow"] .badge-snow,
+#scene[data-step="ground_temp_pick"] .badge-snow,
+#scene[data-step="snow_stay"] .badge-snow,
+#scene[data-step="snow_to_rain"] .badge-snow{visibility:visible;opacity:1}
+
+.wave{animation:waveMove 4s ease-in-out infinite}
+
+@keyframes sunPulse{
+  0%,100%{opacity:.55}
+  50%{opacity:1}
+}
+@keyframes raySpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes riseSteam{
+  0%{opacity:0;transform:translateY(16px)}
+  18%{opacity:.85}
+  100%{opacity:0;transform:translateY(-170px)}
+}
+@keyframes riseHigh{
+  0%{opacity:0;transform:translateY(10px)}
+  20%{opacity:.9}
+  100%{opacity:0;transform:translateY(-260px)}
+}
+@keyframes driftNear{
+  0%,100%{opacity:.25;transform:translate(0,8px)}
+  50%{opacity:.8;transform:translate(8px,-18px)}
+}
+@keyframes fogDrift{
+  0%,100%{transform:translateX(0)}
+  50%{transform:translateX(14px)}
+}
+@keyframes fallDrop{
+  0%{opacity:1;transform:translateY(0)}
+  88%{opacity:1;transform:translateY(185px)}
+  100%{opacity:0;transform:translateY(215px)}
+}
+@keyframes fallFlake{
+  0%{opacity:1;transform:translateY(0) rotate(0)}
+  88%{opacity:1;transform:translateY(200px) rotate(140deg)}
+  100%{opacity:0;transform:translateY(230px) rotate(180deg)}
+}
+@keyframes crystalFall{
+  0%{opacity:0;transform:translateY(0)}
+  15%{opacity:1}
+  100%{opacity:0;transform:translateY(130px)}
+}
+@keyframes sparkle{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.18)}
+}
+@keyframes waveMove{
+  0%,100%{transform:translateX(0)}
+  50%{transform:translateX(-18px)}
+}
+
+@media (max-width:700px){
+  .brand h1{font-size:22px}
+  .mission p,.learn-goal p{font-size:17px}
+  .caption p,.qtext{font-size:18px}
+  .scene-wrap svg{max-height:40vh}
+}
+@media (max-width:430px){
+  .btn{font-size:18px;min-height:48px}
+  .brand h1{font-size:20px}
+}
+
+/* 截圖時略過出現過渡，但仍按步驟顯示／隱藏 */
+html.shot-mode .cloud-main,
+html.shot-mode .fog-layer,
+html.shot-mode .badge-svg,
+html.shot-mode .cool-veil,
+html.shot-mode .crystal{transition:none !important}
